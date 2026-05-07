@@ -201,7 +201,7 @@ struct gpgpu_kernel_params {
 };
 ```
 
-最后和 agent 确定下来，kernel 执行之前，先把参数传入寄存器；在 kernel 内部，参数通过一个越界的 VRAM 地址获取，即通过 VRAM 0x800000 + offset 传递。core 会把这个越界地址转换为读 mmio 请求。另外规定输入数据在 VRAM 0x100000，权重在 0x200000，输出在 0x300000。
+最后和 agent 确定下来，kernel 执行之前，先把参数传入寄存器；在 kernel 内部，参数通过一个越界的 VRAM 地址获取，即通过 VRAM 0x80000000 + offset 传递。core 会把这个越界地址转换为读 mmio 请求。另外规定输入数据在 VRAM 0x100000，权重在 0x200000，输出在 0x300000。
 
 整个过程一个 ioctl 解决：
 
