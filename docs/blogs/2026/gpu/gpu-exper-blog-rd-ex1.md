@@ -190,14 +190,14 @@ OUTPUT_ARCH(riscv)
 
 ```c
 /**
- * struct gpgpu_kernel_params - 内核启动参数（组合网格和块维度）
+ * struct gpgpu_kernel_params - 内核启动参数
  */
 struct gpgpu_kernel_params {
     __u32 grid_dim[3];   /* Grid 维度 (x, y, z) */
     __u32 block_dim[3];  /* Block 维度 (x, y, z) */
     __u64 kernel_addr;   /* 内核代码在 VRAM 中的地址 */
     __u64 args_addr;     /* 参数在 VRAM 中的地址 */
-    __u32 shared_mem;    /* 共享内存大小 */ （未使用）
+    __u32 shared_mem;    /* 共享内存大小 */
 };
 ```
 
